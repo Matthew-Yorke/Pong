@@ -1,0 +1,10 @@
+C:\Users\matt\Documents\Visual Studio 2017\Projects\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Debug\Pong.csprojResolveAssemblyReference.cache
+C:\Users\matt\Documents\Visual Studio 2017\Projects\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.Form1.resources
+C:\Users\matt\Documents\Visual Studio 2017\Projects\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\matt\Documents\Visual Studio 2017\Projects\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Debug\Pong.csproj.GenerateResource.Cache
+C:\Users\matt\Documents\Visual Studio 2017\Projects\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Debug\Pong.csproj.CoreCompileInputs.cache
+C:\Users\matt\Documents\Visual Studio 2017\Projects\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.exe
+C:\Users\matt\Documents\Visual Studio 2017\Projects\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.pdb
+C:\Users\matt\Documents\Visual Studio 2017\Projects\WindowsFormsApp1\WindowsFormsApp1\bin\x64\Debug\WindowsFormsApp1.exe.config
+C:\Users\matt\Documents\Visual Studio 2017\Projects\WindowsFormsApp1\WindowsFormsApp1\bin\x64\Debug\WindowsFormsApp1.exe
+C:\Users\matt\Documents\Visual Studio 2017\Projects\WindowsFormsApp1\WindowsFormsApp1\bin\x64\Debug\WindowsFormsApp1.pdb
