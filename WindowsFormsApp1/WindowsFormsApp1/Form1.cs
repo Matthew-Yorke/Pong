@@ -50,6 +50,22 @@ namespace WindowsFormsApp1
       // The time object that is used to periodically tick to update the screen.
       Timer timer;
 
+      // The possible vertical directions the ball can go in a 2D space.
+      enum VerticalDirection {UP, DOWN};
+
+      // The possible horizontal directions the ball can go in a 2D space.
+      enum HorizontalDirection {LEFT, RIGHT};
+
+      // Determines the balls current vertical direction.
+      VerticalDirection BallVerticalDirection;
+
+      // Determines the balls current horizontal direction.
+      HorizontalDirection BallHorizontalDirection;
+
+      // The speed in which the ball moves.
+      int mBallSpeed;
+      
+
       //*********************************************************************************************************************************************
       //
       // Method Name: Form1
@@ -104,7 +120,14 @@ namespace WindowsFormsApp1
          this.KeyDown += Form1_KeyDown;
          // Indicate the callback method to use when a key is released.
          this.KeyUp += Form1_KeyUp;
+
+         // The initial vertical and horizontal direction of the ball.
+         BallVerticalDirection = VerticalDirection.DOWN;
+         BallHorizontalDirection = HorizontalDirection.LEFT;
          
+         // The initial speed of the ball.
+         mBallSpeed = PongConstants.BALL_INITIAL_SPEED;
+
          // Start up the periodic timer.
          timer = new Timer();
          timer.Tick += new EventHandler(TimerTick);
@@ -283,6 +306,8 @@ namespace WindowsFormsApp1
          // Update the paddles on the window based on the keys pressed down or released.
          UpdatePaddle(mLeftMoveUp, mLeftMoveDown, ref mLeftPaddle);
          UpdatePaddle(mRightMoveUp, mRightMoveDown, ref mRightPaddle);
+         UpdateBall();
+         CheckBallCollision();
       }
 
       //*********************************************************************************************************************************************
@@ -326,6 +351,121 @@ namespace WindowsFormsApp1
             if(thePaddle.Y > (this.Size.Height - PongConstants.PADDLE_HEIGHT))
             {
                thePaddle.Y = this.Size.Height - PongConstants.PADDLE_HEIGHT;
+            }
+         }
+      }
+
+      //*********************************************************************************************************************************************
+      //
+      // Method Name: UpdateBall
+      //
+      // Description:
+      //  TODO: Add description.
+      //
+      // Arguments:
+      //  N/A
+      //
+      // Return:
+      //  N/A
+      //
+      //*********************************************************************************************************************************************
+      private void UpdateBall()
+      {
+         switch (BallVerticalDirection)
+         {
+            case VerticalDirection.UP:
+            {
+               mBall.Y -= mBallSpeed;
+               break;
+            }
+            case VerticalDirection.DOWN:
+            {
+               mBall.Y += mBallSpeed;
+               break;
+            }
+            default:
+            {
+               break;
+            }
+         }
+
+         switch (BallHorizontalDirection)
+         {
+            case HorizontalDirection.LEFT:
+               {
+                  mBall.X -= mBallSpeed;
+                  break;
+               }
+            case HorizontalDirection.RIGHT:
+               {
+                  mBall.X += mBallSpeed;
+                  break;
+               }
+            default:
+               {
+                  mBall.X += mBallSpeed;
+                  break;
+               }
+         }
+      }
+
+      //*********************************************************************************************************************************************
+      //
+      // Method Name: CheckBallCollision
+      //
+      // Description:
+      //  TODO: Add description.
+      //
+      // Arguments:
+      //  N/A
+      //
+      // Return:
+      //  N/A
+      //
+      //*********************************************************************************************************************************************
+      private void CheckBallCollision()
+      {
+         // Check ball collision against the top and bottom boundaries and reverse the vertical direction once a boundary is hit.
+         if (mBall.Y < 0)
+         {
+            BallVerticalDirection = VerticalDirection.DOWN;
+            
+            mBallSpeed += PongConstants.BALL_SPEED_INCREASE;
+            if (mBallSpeed > PongConstants.BALL_MAXIMUM_SPEED)
+            {
+               mBallSpeed = PongConstants.BALL_MAXIMUM_SPEED;
+            }
+         }
+         else if (mBall.Y > (this.Size.Height - PongConstants.BALL_WIDTH_AND_HEIGHT))
+         {
+            BallVerticalDirection = VerticalDirection.UP;
+
+            mBallSpeed += PongConstants.BALL_SPEED_INCREASE;
+            if (mBallSpeed > PongConstants.BALL_MAXIMUM_SPEED)
+            {
+               mBallSpeed = PongConstants.BALL_MAXIMUM_SPEED;
+            }
+         }
+
+         // Check ball collision against the left and right paddle and reverse the horizontal direction once a paddle is hit.
+         if (mBall.IntersectsWith(mLeftPaddle))
+         {
+            BallHorizontalDirection = HorizontalDirection.RIGHT;
+
+            mBallSpeed += PongConstants.BALL_SPEED_INCREASE;
+            if (mBallSpeed > PongConstants.BALL_MAXIMUM_SPEED)
+            {
+               mBallSpeed = PongConstants.BALL_MAXIMUM_SPEED;
+            }
+         }
+         else if (mBall.IntersectsWith(mRightPaddle))
+         {
+            BallHorizontalDirection = HorizontalDirection.LEFT;
+
+            mBallSpeed += PongConstants.BALL_SPEED_INCREASE;
+            if (mBallSpeed > PongConstants.BALL_MAXIMUM_SPEED)
+            {
+               mBallSpeed = PongConstants.BALL_MAXIMUM_SPEED;
             }
          }
       }

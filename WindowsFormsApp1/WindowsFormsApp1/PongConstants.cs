@@ -45,5 +45,14 @@ namespace WindowsFormsApp1
 
       // Used for dividing a value in half.
       public const int HALF = 2;
+
+      // The inital speed of a ball when a match begins.
+      public const int BALL_INITIAL_SPEED = 2;
+
+      // The speed increase when the ball hits a boundary or paddle.
+      public const int BALL_SPEED_INCREASE = 1;
+
+      // The maximum speed the ball can travel.
+      public const int BALL_MAXIMUM_SPEED = 15;
    }
 }
