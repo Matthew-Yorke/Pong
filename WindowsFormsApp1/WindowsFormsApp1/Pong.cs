@@ -3,7 +3,7 @@
 // File Name: Pong.cs
 //
 // Description:
-//  The window and functionality of the pong game. This window handles the updating and drawing of all game components of the game including
+//  The window and functionality of the Pong game. This window handles the updating and drawing of all game components of the game including
 //  the paddles, ball, text. This class also handles the collision detection for the game.
 //
 // Change History:
@@ -54,13 +54,13 @@ namespace WindowsFormsApp1
       // Determines if the down button for the left paddle is being pressed (true) or not (false).
       Boolean mRightMoveDown;
 
-      // The left paddle image depicitng the location and size of the image.
+      // The left paddle image depicting the location and size of the image.
       Rectangle mLeftPaddle;
 
-      // The right paddle image depicitng the location and size of the image.
+      // The right paddle image depicting the location and size of the image.
       Rectangle mRightPaddle;
 
-      // The ball image depicitng the location and size of the image.
+      // The ball image depicting the location and size of the image.
       Rectangle mBall;
 
       // The possible vertical directions the ball can go in a 2D space.
@@ -87,7 +87,7 @@ namespace WindowsFormsApp1
       //
       // Description:
       //  Initialize the components used in the window. Set member variables to default values. Set the left and right paddle as well as the ball
-      //  to their startgin locations. Determine which functions to call for painting and key presses. Start the periodic timer.
+      //  to their starting locations. Determine which functions to call for painting and key presses. Start the periodic timer.
       //
       // Arguments:
       //  N/A
@@ -98,7 +98,7 @@ namespace WindowsFormsApp1
       //*********************************************************************************************************************************************
       public Pong()
       {
-         // Call to initalize the screen qnd components on the screen.
+         // Call to initialize the screen and components on the screen.
          InitializeComponent();
 
          // Player scores start at 0 in a new game.
@@ -165,7 +165,7 @@ namespace WindowsFormsApp1
       //
       // Description:
       //  Reset game components when. Randomize the horizontal and vertical direction of the ball when the match begins. Reset the ball speed to its
-      //  inital speed. Put the game into the prematch wait state.
+      //  initial speed. Put the game into the prematch wait state.
       //
       // Arguments:
       //  N/A
@@ -211,7 +211,7 @@ namespace WindowsFormsApp1
       //*********************************************************************************************************************************************
       private void RandomizeBallDirection()
       {
-         // Create a new instance of random to allow a pesudo random number.
+         // Create a new instance of random to allow a pseudo random number.
          Random random = new Random();
 
          // Randomize the vertical direction.
@@ -436,7 +436,7 @@ namespace WindowsFormsApp1
       private void UpdatePaddle(Boolean theUp, Boolean theDown, ref Rectangle thePaddle)
       {
          // Check if the up button for the paddle is currently being pressed down.
-         // Note: If both up AND down buttons are pressed the up button takes presedence.
+         // Note: If both up AND down buttons are pressed the up button takes precedence.
          if (theUp == true)
          {
             // Set the paddle y-coordinate to draw further up the window by the paddle speed.
@@ -478,7 +478,7 @@ namespace WindowsFormsApp1
       //*********************************************************************************************************************************************
       private void UpdateBall()
       {
-         // Increase or decrease the y-corrdinate of the ball based on the ball speed and vertical direction of the ball.
+         // Increase or decrease the y-coordinate of the ball based on the ball speed and vertical direction of the ball.
          switch (mBallVerticalDirection)
          {
             // Decrease the y-coordinate (draw higher on the screen) by the ball speed if the vertical direction is upwards.
@@ -501,7 +501,7 @@ namespace WindowsFormsApp1
             }
          }
 
-         // Increase or decrease the x-corrdinate of the ball based on the ball speed and horizontal direction of the ball.
+         // Increase or decrease the x-coordinate of the ball based on the ball speed and horizontal direction of the ball.
          switch (mBallHorizontalDirection)
          {
             // Decrease the y-coordinate (draw more to the left on the screen) by the ball speed if the horizontal direction is to the left.
@@ -531,7 +531,7 @@ namespace WindowsFormsApp1
       //
       // Description:
       //  Check collision of the ball against the top, bottom, left, and right boundaries as well as the ball against the paddles. The ball will
-      //  change in reverse horizontal direction when collision agains a paddle and change reverse vertical direction when collision against the
+      //  change in reverse horizontal direction when collision against a paddle and change reverse vertical direction when collision against the
       //  top and bottom boundaries. A ball collision against the
       //
       // Arguments:
@@ -544,7 +544,7 @@ namespace WindowsFormsApp1
       private void CheckBallCollision()
       {
          // Check ball collision against the top boundary and reverse the vertical direction to be downwards if the boundary is hit.
-         // Increase the ball speed if collision occurrs.
+         // Increase the ball speed if collision occurs.
          if (mBall.Y < 0)
          {
             mBallVerticalDirection = VerticalDirection.DOWN;
@@ -556,7 +556,7 @@ namespace WindowsFormsApp1
             }
          }
          // Check ball collision against the bottom boundary and reverse the vertical direction to be upwards if the boundary is hit.
-         // Increase the ball speed if collision occurrs.
+         // Increase the ball speed if collision occurs.
          else if (mBall.Y > (this.Size.Height - PongConstants.BALL_WIDTH_AND_HEIGHT))
          {
             mBallVerticalDirection = VerticalDirection.UP;
@@ -569,7 +569,7 @@ namespace WindowsFormsApp1
          }
 
          // Check ball collision against the left paddle and reverse the horizontal direction to go right if the paddle is hit.
-         // Increase the ball speed if collision occurrs.
+         // Increase the ball speed if collision occurs.
          if (mBall.IntersectsWith(mLeftPaddle))
          {
             mBallHorizontalDirection = HorizontalDirection.RIGHT;
@@ -581,7 +581,7 @@ namespace WindowsFormsApp1
             }
          }
          // Check ball collision against the right paddle and reverse the horizontal direction to go left if the paddle is hit.
-         // Increase the ball speed if collision occurrs.
+         // Increase the ball speed if collision occurs.
          else if (mBall.IntersectsWith(mRightPaddle))
          {
             mBallHorizontalDirection = HorizontalDirection.LEFT;
@@ -616,7 +616,7 @@ namespace WindowsFormsApp1
       // Method Name: Draw
       //
       // Description:
-      //  Draw the game objects ontop the window.
+      //  Draw the game objects onto the window.
       //
       // Arguments:
       //  theSender - The object that sent the event arguments.
@@ -651,7 +651,7 @@ namespace WindowsFormsApp1
             textFormat.Alignment = StringAlignment.Center;
             textFormat.LineAlignment = StringAlignment.Center;
 
-            // Draw the left player score to be center on the left half (first quarter horizonta, half vertical) of the screen.
+            // Draw the left player score to be center on the left half (first quarter horizontal, half vertical) of the screen.
             theEventArguments.Graphics.DrawString(PongConstants.LEFT_PLAYER_SCORE_TEXT + mLeftPlayerScore.ToString(),
                                                   textFont,
                                                   textColor,
@@ -667,7 +667,7 @@ namespace WindowsFormsApp1
                                                   this.Size.Height / PongConstants.HALF,
                                                   textFormat);
 
-            // Draw the countdown timer for the prewait match state to the center (half horizontal, first quarter vertical) of the screen.
+            // Draw the countdown timer for the prematch wait state to the center (half horizontal, first quarter vertical) of the screen.
             // Note: The timer will display as an integer in seconds.
             int timerInSeconds = (mPrematchTime / PongConstants.MILLISECONDS_IN_SECONDS) + PongConstants.INTEGER_DIVISION_CIELING;
             theEventArguments.Graphics.DrawString(timerInSeconds.ToString(),
