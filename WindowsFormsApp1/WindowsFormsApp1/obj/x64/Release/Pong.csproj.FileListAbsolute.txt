@@ -1,0 +1,9 @@
+C:\Users\Yorke\Documents\GitHub\Pong\WindowsFormsApp1\WindowsFormsApp1\bin\x64\Release\WindowsFormsApp1.exe.config
+C:\Users\Yorke\Documents\GitHub\Pong\WindowsFormsApp1\WindowsFormsApp1\bin\x64\Release\WindowsFormsApp1.exe
+C:\Users\Yorke\Documents\GitHub\Pong\WindowsFormsApp1\WindowsFormsApp1\bin\x64\Release\WindowsFormsApp1.pdb
+C:\Users\Yorke\Documents\GitHub\Pong\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Release\WindowsFormsApp1.Pong.resources
+C:\Users\Yorke\Documents\GitHub\Pong\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Release\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\Yorke\Documents\GitHub\Pong\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Release\Pong.csproj.GenerateResource.cache
+C:\Users\Yorke\Documents\GitHub\Pong\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Release\Pong.csproj.CoreCompileInputs.cache
+C:\Users\Yorke\Documents\GitHub\Pong\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Release\WindowsFormsApp1.exe
+C:\Users\Yorke\Documents\GitHub\Pong\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Release\WindowsFormsApp1.pdb

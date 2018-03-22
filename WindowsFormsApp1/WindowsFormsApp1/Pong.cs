@@ -289,6 +289,12 @@ namespace WindowsFormsApp1
                mRightMoveDown = true;
                break;
             }
+            // The Escape key is pressed and ends the application.
+            case Keys.Escape:
+            {
+               Application.Exit();
+               break;
+            }
             default:
             {
                break;
